@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>workers</title>
+</head>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container text-center">
+    <div><h1>Список платильщиковв</h1></div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Номер сотрудника</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Адрес</th>
+                <th>Платеж</th>
+                <th>Дата</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Сумма</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="worker : ${listWorkers}">
+                <tr>
+                    <td>[[${worker.id}]]</td>
+                    <td>[[${worker.surname}]]</td>
+                    <td>[[${worker.name}]]</td>
+                    <td>[[${worker.lastname}]]</td>
+                    <td>[[${worker.address}]]</td>
+                    <td>[[${worker.payment}]]</td>
+                    <td>[[${worker.paymentdata}]]</td>
+                    <td>[[${worker.price}]]</td>
+                    <td>[[${worker.quantity}]]</td>
+                    <td>[[${worker.sum}]]</td>
+                    <td>
+                        &nbsp;
+                        <a th:href="@{'/workers/delete/' + ${worker.id}}">Удалить</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<title>header</title>
+</head>
+<body>
+<div th:fragment="header">
+
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <h5 class="=my-0 mr-5 font-weight-normal">Справочник платильщиков</h5>
+        <nav class="my-2 m2-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="/">Главная</a>
+            <a class="p-2 text-dark" href="/workers">Работа с данными</a>
+            <a class="p-2 text-dark" href="/workers/new">Создать платильщика</a>
+        </nav>
+    </div>
+</div>
+</body>
+</html>

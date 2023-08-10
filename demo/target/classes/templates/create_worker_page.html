@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>create new worker</title>
+</head>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+<div class="container text-center">
+    <div th:if="${worker.id == null}"><h1>Создать нового платильщика</h1></div>
+
+
+    <form th:action="@{/workers/save}" th:object="${worker}" method="post"
+          style="max-width: 600px;margin: 0 auto;">
+        <input type="hidden" th:field="*{id}" th:value="${worker.id}"/>
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Фамилия</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{surname}" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Имя</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{name}" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Отчество</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{lastname}" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Адрес</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{address}" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Платеж</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{payment}" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Дата</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{paymentdata}" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Цена</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{price}" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Количество</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{quantity}" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4">Сумма</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{sum}" class="form-control" required/>
+                </div>
+            </div>
+
+            <div class="text-center p-3">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</div>
+</body>
+</html>
